@@ -15,4 +15,21 @@ class cubitList extends Cubit<listState>{
 
     emit(listState(mData: currentstate));
   }
+
+ /// update data
+     updataMap({required int index,
+       required Map<String, dynamic> updatedData}){
+
+      var currentstate = state.mData;
+       currentstate[index] = updatedData;
+
+       emit(listState(mData: currentstate));
+     }
+
+ /// Delete data
+      deleteMap({required int index}){
+         var currentstate = state.mData;
+         currentstate.removeAt(index);
+         emit(listState(mData: currentstate));
+}
 }
